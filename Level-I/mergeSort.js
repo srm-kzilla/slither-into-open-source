@@ -1,5 +1,5 @@
 // JavaScript program for Merge Sort
-function merge(arr, l, m, r) {
+ merge(arr, l, m, r) {
   var n1 = m - l + 1;
   var n2 = r - m;
 
@@ -54,7 +54,7 @@ function printArray(A, size) {
 }
 
 var arr = [12, 11, 13, 5, 6, 7];
-var arr_size = arr.length;
+var arrSize = arr.length;
 
 console.log("Given array is: ");
 printArray(arr, arr_size);
