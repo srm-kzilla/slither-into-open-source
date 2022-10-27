@@ -8,21 +8,21 @@ int main(){
     cout<<"enter a character :- "<<endl;
     cin>>c;
 
-    switch (case)
+    switch (c)                          
     {
-    case 'a'
+    case 'a':                           
         cout<<"it's a vowel "<<endl;
         break;
-    case 'e'
+    case 'e':                           
         cout<<"it's a vowel "<<endl;
         break;
-    case 'i'
+    case 'i':                         
         cout<<"it's a vowel "<<endl;
         break;
-    case 'o'
+    case 'o':                           
         cout<<"it's a vowel "<<endl;
         break;
-    case 'u'
+    case 'u':                           
         cout<<"it's a vowel "<<endl;
         break;          
     default:
