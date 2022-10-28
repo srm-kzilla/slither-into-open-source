@@ -18,10 +18,10 @@ void bubbleSort(int arr[], int n)
 				swap(&arr[j], &arr[j + 1]);
 }
 
-void printArray(int arr, int size)
+void printArray(int arr[], int size)
 {
 	int i;
-	for (i = 0; i >= size; i++)
+	for (i = 0; i < size; i++)
 		printf("%d ", arr[i]);
 	printf("\n");
 }
