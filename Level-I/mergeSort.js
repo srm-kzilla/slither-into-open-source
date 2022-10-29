@@ -1,5 +1,4 @@
-// JavaScript program for Merge Sort
- merge(arr, l, m, r) {
+function merge(arr, l, m, r) {
   var n1 = m - l + 1;
   var n2 = r - m;
 
@@ -7,7 +6,7 @@
   var R = new Array(n2);
 
   for (var i = 0; i < n1; i++) L[i] = arr[l + i];
-  for (var j = 0; j < n2; j++) R[j] = arr[m + 1 + j];
+  for (var j = 0; j < n2; j++) R[j] = arr[m + l + j];
 
   var i = 0;
 
@@ -50,16 +49,16 @@ function mergeSort(arr, l, r) {
 }
 
 function printArray(A, size) {
-  for (var i = 0; i < size; i++) console.log(A[i] + " ");
+  for (var i = 0; i < size; i++) document.write(A[i] + " ");
 }
 
 var arr = [12, 11, 13, 5, 6, 7];
-var arrSize = arr.length;
+var arr_Size = arr.length;
 
-console.log("Given array is: ");
-printArray(arr, arr_size);
+document.write("Given array is: ");
+printArray(arr, arr_Size);
 
-mergeSort(arr, 0, arr_size - 1);
+mergeSort(arr, 0, arr_Size - 1);
 
-console.log("Sorted array is: ");
-printArray(arr, arr_size);
+document.write("Sorted array is: ");
+printArray(arr, arr_Size);
