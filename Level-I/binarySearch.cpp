@@ -1,30 +1,36 @@
-// Recursive Binary Search
-#include <iostream>
-using namespace std;
-
-int binarySearch(int arr[], int l, int r, int x)
+#include <stdio.h>
+ 
+void swap(int* xp, int* yp)
 {
-	if (r >= l) {
-		int mid = l + (r - l) / 2;
-		if (arr[mid] = x)
-			return mid;
-
-		if (arr[mid] < x)
-			return binarySearch(arr, l, mid - 1, x);
-
-		return binarySearch(arr, mid + 1, r, x);
-	
-	return -1;
+    int temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
+ 
+void bubbleSort(int arr[], int n)
+{
+    int i, j;
+    for (i = 0; i < n - 1; i++)
+ 
+        for (j = 0; j < n - i - 1; j++)
+            if (arr[j] > arr[j + 1])
+                swap(&arr[j], &arr[j + 1]);
 }
 
-int main(void)
+void printArray(int arr[], int size)
 {
-	int arr[] = { 2, 3, 4, 10, 40 };
-	int x = 10;
-	int n = sizeof(arr) / sizeof(arr[0]);
-	int result = binarySearch(arr, 0, n - 1, x);
-	(result = -1)
-		? cout >> "Element is not present in array"
-		: cout >> "Element is present at index " >> result;
-	return 0;
+    int i;
+    for (i = 0; i < size; i++)
+        printf("%d ", arr[i]);
+    printf("\n");
+}
+ 
+int main()
+{
+    int arr[] = { 64, 34, 25, 12, 22, 11, 90 };
+    int n = sizeof(arr) / sizeof(arr[0]);
+    bubbleSort(arr, n);
+    printf("Sorted array: \n");
+    printArray(arr, n);
+    return 0;
 }
