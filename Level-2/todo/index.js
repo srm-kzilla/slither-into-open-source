@@ -1,25 +1,37 @@
-const express = require("express");
+const express = require('express');
 const app = express();
-
 app.use(express.json());
-
-const notes = [
+let toDoArr = [
   {
-    text: "This is a test note",
-    id: 1,
+    item: 'Make a todo app',
+    id: 0,
   },
 ];
 
-app.get("/", (req, res) => {
-  res.status(200).json(notes);
+app.get('/', function (req, res) {
+  res.status(200).json({ data: toDoArr, message: 'Data fetched!' });
 });
 
-app.post()
+app.post('/', function (req, res) {
+  toDoArr.push(req.body);
+  res.status(200).json({ data: toDoArr });
+});
 
-app.put()
+app.delete('/', function (req, res) {
+  toDoArr = toDoArr.filter(function (el) {
+    return req.body.id !== el.id;
+  });
+  res.status(200).json({ data: toDoArr });
+});
 
-app.delete()
+app.put('/', function (req, res) {
+  toDoArr = toDoArr.filter(function (el) {
+    return req.body.id !== el.id;
+  });
+  toDoArr.push(req.body);
+  res.status(200).json({ data: toDoArr });
+})
 
 app.listen(3000, () => {
-  console.log("Listening on port 3000");
+  console.log('Server started at PORT: 3000');
 });
