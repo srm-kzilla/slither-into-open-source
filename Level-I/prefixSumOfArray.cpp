@@ -12,11 +12,13 @@ int prefixSum(int arr[] ,int n){
 
 int main(){
     int n;
+    cout<<"The size of the array is = ";
     cin>>n;
     int arr[n];
     for(int i=0;i<n;i++){
+        cout<<"Please insert the next number : ";
         cin>>arr[i];
     }
-    cout<<prefixSum(arr,n);
+    cout<<"The sum of the numbers in the array is " << prefixSum(arr,n);
     return 0;
 }
